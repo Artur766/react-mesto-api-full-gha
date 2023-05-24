@@ -1,0 +1,5 @@
+@media screen and (max-width:600px) {
+  .header__wrapper_mobile-hidden {
+    display: none;
+  }
+}

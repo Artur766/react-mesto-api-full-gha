@@ -1,0 +1,16 @@
+.header__wrapper {
+  display: flex;
+  column-gap: 24px;
+}
+
+@media screen and (max-width:600px) {
+  .header__wrapper {
+    margin-right: 27px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .header__wrapper {
+    margin-right: 27px;
+  }
+}

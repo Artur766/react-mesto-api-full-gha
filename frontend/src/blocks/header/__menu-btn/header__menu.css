@@ -1,0 +1,24 @@
+.header__menu-btn {
+  background-image: url(../../../images/icons8-меню.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  width: 33px;
+  height: 33px;
+  border: none;
+  display: none;
+  padding: 0;
+}
+
+.header__menu-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+  .header__menu-btn {
+    display: block;
+    margin-right: 27px;
+  }
+}

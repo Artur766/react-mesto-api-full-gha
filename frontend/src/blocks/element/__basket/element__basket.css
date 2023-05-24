@@ -1,0 +1,18 @@
+.element__basket {
+  background-image: url(../../../images/urna.svg);
+  background-repeat: no-repeat;
+  background-size: 18px 19px;
+  background-color: transparent;
+  width: 18px;
+  height: 19px;
+  border: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.element__basket:hover {
+  opacity: 0.6;
+
+}

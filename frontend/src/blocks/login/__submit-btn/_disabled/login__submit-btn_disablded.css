@@ -1,0 +1,8 @@
+.login__submit-btn_disablded {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.login__submit-btn_disablded:hover {
+  opacity: 0.2;
+}

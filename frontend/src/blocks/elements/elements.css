@@ -1,0 +1,20 @@
+.elements {
+  margin: 0 auto;
+  max-width: 880px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 17px;
+}
+
+@media screen and (max-width:900px) {
+  .elements {
+    max-width: 581px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .elements {
+    max-width: 282px;
+  }
+}

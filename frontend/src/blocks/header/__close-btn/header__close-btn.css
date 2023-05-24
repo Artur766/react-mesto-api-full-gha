@@ -1,0 +1,24 @@
+.header__close-btn {
+  background-image: url(../../../images/Close_Icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+  border: none;
+  display: none;
+  padding: 0;
+}
+
+.header__close-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+  .header__close-btn {
+    display: block;
+    margin-right: 27px;
+  }
+}
