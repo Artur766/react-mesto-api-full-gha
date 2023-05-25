@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { signIn, signUp } = require('./middlewares/validations');
 
 const { login, createUser } = require('./controllers/users');
@@ -13,6 +14,7 @@ const NotFoundError = require('./errors/not-found-err');
 const { PORT = 3000 } = process.env;
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json()); // для собирания JSON-формата
 app.use(bodyParser.urlencoded({ extended: true })); // для приёма веб-страниц внутри POST-запроса
