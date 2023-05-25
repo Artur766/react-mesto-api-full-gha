@@ -2,6 +2,8 @@ import React from "react";
 
 function ImagePopup(props) {
 
+  const { card, onClose } = props;
+
   function handleOverlayClose(evt) {
     if (evt.target === evt.currentTarget) {
       //удаляем открытый попап
@@ -25,7 +27,7 @@ function ImagePopup(props) {
     return () => {
       document.removeEventListener("keydown", handleEscClose);
     }
-  }, [props.card.link, props.onClose]);
+  }, [card, onClose]);
 
   return (
     <div onMouseDown={handleOverlayClose} className={`popup popup_type_increase ${props.card.link ? 'popup_opened' : ''}`} >

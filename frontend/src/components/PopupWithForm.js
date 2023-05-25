@@ -2,6 +2,8 @@ import React from "react";
 
 function PopupWithForm(props) {
 
+  const { isOpen, onClose } = props;
+
   function handleOverlayClose(evt) {
     if (evt.target === evt.currentTarget) {
       //удаляем открытый попап
@@ -25,7 +27,7 @@ function PopupWithForm(props) {
     return () => {
       document.removeEventListener("keydown", handleEscClose);
     }
-  }, [props.isOpen, props.onClose]);
+  }, [isOpen, onClose]);
 
   return (
     <div onMouseDown={handleOverlayClose} className={`popup popup_type_${props.name} ${props.isOpen ? "popup_opened" : ""}`}>

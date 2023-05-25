@@ -8,7 +8,7 @@ function AddPlacePopup(props) {
 
   React.useEffect(() => {
     reset();
-  }, [props.isOpen])
+  }, [props.isOpen, reset])
 
   function handleSubmit(e) {
     e.preventDefault();

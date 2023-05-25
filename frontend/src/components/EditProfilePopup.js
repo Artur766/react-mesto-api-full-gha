@@ -6,12 +6,12 @@ import { useFormValidation } from "../utils/useFormValidation"
 function EditProfilePopup(props) {
 
   const currentUser = React.useContext(CurrentUserContext);
-  const { values, errors, isValid, handleChange, setValue, reset } = useFormValidation();
+  const { values, errors, isValid, handleChange, reset } = useFormValidation();
 
 
   React.useEffect(() => {
     reset({ "userName": currentUser.name, "about": currentUser.about });
-  }, [currentUser, props.isOpen])
+  }, [currentUser, props.isOpen, reset])
 
 
   function handleSubmit(e) {
