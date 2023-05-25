@@ -7,7 +7,7 @@ function ImagePopup(props) {
   function handleOverlayClose(evt) {
     if (evt.target === evt.currentTarget) {
       //удаляем открытый попап
-      props.onClose();
+      onClose();
     }
   }
 
@@ -16,7 +16,7 @@ function ImagePopup(props) {
     function handleEscClose(evt) {
       if (evt.key === "Escape") {
         //удаляем открытый попап
-        props.onClose();
+        onClose();
       }
     }
 

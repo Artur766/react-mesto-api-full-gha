@@ -16,11 +16,11 @@ function PopupWithForm(props) {
     function handleEscClose(evt) {
       if (evt.key === "Escape") {
         //удаляем открытый попап
-        props.onClose();
+        onClose();
       }
     }
 
-    if (props.isOpen) {
+    if (isOpen) {
       document.addEventListener("keydown", handleEscClose);
     }
 

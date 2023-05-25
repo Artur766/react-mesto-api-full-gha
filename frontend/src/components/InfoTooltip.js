@@ -7,7 +7,7 @@ function InfoTooltip(props) {
   function handleOverlayClose(evt) {
     if (evt.target === evt.currentTarget) {
       //удаляем открытый попап
-      props.onClose();
+      onClose();
     }
   }
 
@@ -16,11 +16,11 @@ function InfoTooltip(props) {
     function handleEscClose(evt) {
       if (evt.key === "Escape") {
         //удаляем открытый попап
-        props.onClose();
+        onClose();
       }
     }
 
-    if (props.isOpen) {
+    if (isOpen) {
       document.addEventListener("keydown", handleEscClose);
     }
 
@@ -30,7 +30,7 @@ function InfoTooltip(props) {
   }, [isOpen, onClose]);
 
   return (
-    <div className={`popup popup_type_${props.name} ${props.isOpen ? "popup_opened" : ""}`} onMouseDown={handleOverlayClose} >
+    <div className={`popup popup_type_${props.name} ${isOpen ? "popup_opened" : ""}`} onMouseDown={handleOverlayClose} >
       <div className="popup__container">
         <button className="popup__close-btn " type="button" onClick={props.onClose}></button>
         <img className="popup__union" src={props.image} alt="иконка подтверждения" />
