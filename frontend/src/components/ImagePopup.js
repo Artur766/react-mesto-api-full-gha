@@ -20,14 +20,14 @@ function ImagePopup(props) {
       }
     }
 
-    if (props.card.link) {
+    if (card.link) {
       document.addEventListener("keydown", handleEscClose);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscClose);
     }
-  }, [card, onClose]);
+  }, [card.link, onClose]);
 
   return (
     <div onMouseDown={handleOverlayClose} className={`popup popup_type_increase ${props.card.link ? 'popup_opened' : ''}`} >
