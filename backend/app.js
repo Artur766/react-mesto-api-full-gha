@@ -1,9 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
-const cors = require('cors');
 const { signIn, signUp } = require('./middlewares/validations');
 
 const { login, createUser } = require('./controllers/users');
