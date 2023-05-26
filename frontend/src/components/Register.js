@@ -12,7 +12,6 @@ function Register(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     auth.register(values["email"], values["password"])
       .then((res) => {
         if (res.data) {

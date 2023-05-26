@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.arturito.nomoredomains.rocks/";
+export const BASE_URL = "https://api.arturito.nomoredomains.rocks";
 
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {
@@ -6,7 +6,7 @@ export function register(email, password) {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ password, email })
+    body: JSON.stringify({ email: email, password: password })
   })
     .then(res => handleResponse(res))
     .then(res => res)
