@@ -74,7 +74,6 @@ module.exports.updateUserInfo = (req, res, next) => {
       return res.send(user);
     })
     .catch((err) => {
-      if (err.name === 'CastError') return next(new BadRequestError('Переданы некорректные данные с некорректным id.'));
       if (err.name === 'ValidationError') return next(new BadRequestError('Переданы некорректные данные при обновлении профиля.'));
       return next(err);
     });
