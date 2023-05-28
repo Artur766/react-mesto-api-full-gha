@@ -1,5 +1,10 @@
 {
   "extends": "airbnb-base",
+  "settings": {
+    "import/core-modules": [
+      "dotenv"
+    ]
+  },
   "rules": {
     "no-underscore-dangle": [
       "error",
