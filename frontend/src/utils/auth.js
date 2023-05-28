@@ -1,4 +1,5 @@
 // export const BASE_URL = "http://localhost:3000";
+
 export const BASE_URL = "https://api.arturito.nomoredomains.rocks";
 
 export function register(email, password) {
