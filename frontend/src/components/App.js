@@ -59,7 +59,7 @@ function App() {
         .then((dataUser) => {
           if (dataUser) {
             setLoggedIn(true);
-            setUserEmail(dataUser.data.email);
+            setUserEmail(dataUser.email);
             navigate("/", { replace: true });
           }
         }).catch(err => console.log(err))
@@ -72,7 +72,7 @@ function App() {
 
     api.createCard(card)
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        setCards([...cards, newCard]);
         closeAllPopups();
       }).catch((err) => {
         console.log(err);
@@ -85,7 +85,7 @@ function App() {
   //постановка и снятие лайка 
   function handleCardLike(card) {
     // проверяем есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {

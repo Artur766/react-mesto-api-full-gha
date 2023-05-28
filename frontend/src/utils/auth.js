@@ -1,12 +1,13 @@
-export const BASE_URL = "https://api.arturito.nomoredomains.rocks";
+export const BASE_URL = "http://localhost:3000";
 
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     },
-    body: JSON.stringify({ email: email, password: password })
+    body: JSON.stringify({ email, password })
   })
     .then(res => handleResponse(res))
     .then(res => res)
@@ -16,9 +17,10 @@ export function authorize(email, password) {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     },
-    body: JSON.stringify({ password, email })
+    body: JSON.stringify({ email, password })
   })
     .then(res => handleResponse(res))
     .then((res) => {

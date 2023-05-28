@@ -6,7 +6,6 @@ const FordBidden = require('../errors/fordbidden-err');
 module.exports.getCards = (req, res, next) => {
   // найти вообще всех
   Card.find({})
-    .populate(['owner', 'likes'])
     .then((cards) => res.send(cards))
     .catch(next);
 };

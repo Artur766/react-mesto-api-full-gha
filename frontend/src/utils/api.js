@@ -15,65 +15,93 @@ class Api {
 
 
   createCard(data) {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this.baseUrl}/cards`, {
       method: "POST",
-      headers: this.headers,
+      headers: {
+        authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)
     })
       .then(this._handleResponse)
   }
 
   getInitialCards() {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this.baseUrl}/cards`, {
-      headers: this.headers,
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     })
       .then(this._handleResponse)
   }
 
   getUserInformation() {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this.baseUrl}/users/me`, {
-      headers: this.headers,
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     })
       .then(this._handleResponse)
   }
 
   setUserInfo(data) {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
-      headers: this.headers,
+      headers: {
+        authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)
     })
       .then(this._handleResponse)
   }
 
   setUserAvatar(dataUrl) {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this.baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: this.headers,
+      headers: {
+        authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(dataUrl)
     })
       .then(this._handleResponse)
   }
 
   deleteCard(idCard) {
+    const token = localStorage.getItem("jwt");
     return fetch(`${this.baseUrl}/cards/${idCard}`, {
       method: "DELETE",
-      headers: this.headers
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     })
       .then(this._handleResponse);
   }
 
   changeLikeCardStatus(idCard, isLiked) {
+    const token = localStorage.getItem("jwt");
     if (isLiked) {
       return fetch(`${this.baseUrl}/cards/${idCard}/likes`, {
         method: "PUT",
-        headers: this.headers
+        headers: {
+          authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
       })
         .then(this._handleResponse);
     } else {
       return fetch(`${this.baseUrl}/cards/${idCard}/likes`, {
         method: "DELETE",
-        headers: this.headers
+        headers: {
+          authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
       })
         .then(this._handleResponse);
     }
