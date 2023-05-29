@@ -16,8 +16,8 @@ const userUpdateInfoValidation = celebrate({
 });
 
 const userUpdateAvatarValidation = celebrate({
-  body: Joi.object().required().keys({
-    avatar: Joi.string().uri({
+  body: Joi.object().keys({
+    avatar: Joi.string().required().uri({
       scheme: ['http', 'https'],
     }).pattern(urlValidator),
   }),

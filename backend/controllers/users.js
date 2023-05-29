@@ -20,10 +20,7 @@ module.exports.getUserId = (req, res, next) => {
   User.findById(req.params.userId)
     .orFail(() => new NotFoundError('Пользователь с указанным id не существует'))
     .then((user) => res.send(user))
-    .catch((err) => {
-      if (err.name === 'CastError') return next(new BadRequestError('Переданы некорректные данные с некорректным id.'));
-      return next(err);
-    });
+    .catch(next);
 };
 
 module.exports.createUser = (req, res, next) => {
@@ -96,7 +93,6 @@ module.exports.updateUserAvatar = (req, res, next) => {
       return res.send(user);
     })
     .catch((err) => {
-      if (err.name === 'CastError') return next(new BadRequestError('Переданы некорректные данные с некорректным id.'));
       if (err.name === 'ValidationError') return next(new BadRequestError('Переданы некорректные данные при обновлении аватара.'));
       return next(err);
     });
