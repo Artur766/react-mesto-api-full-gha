@@ -51,5 +51,3 @@ function handleResponse(res) {
   }
   return Promise.reject(new Error("Произошла ошибка"));
 }
-
-

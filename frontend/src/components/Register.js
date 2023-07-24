@@ -14,7 +14,6 @@ function Register(props) {
     e.preventDefault();
     auth.register(values["email"], values["password"])
       .then((data) => {
-        console.log(typeof data, data);
         if (data.email) {
           props.handleInfoTooltipOpen(true);
           navigate("/sign-in", { replace: true });
